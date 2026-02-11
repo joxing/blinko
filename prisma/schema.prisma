@@ -8,8 +8,9 @@ generator client {
 // }
 
 datasource db {
-  provider = "postgres"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL") // 添加此行以分离迁移连接
 }
 
 model accounts {
